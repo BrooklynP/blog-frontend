@@ -1,5 +1,9 @@
-<div *ngFor="let post of posts">
-<h1>{{post.heading}}</h1>
-<small>{{post.author}}</small>
-<p>{{post.content}}</p>
+<header>
+    <h1>Brooklyns Cool Travel Blog</h1>
+</header>
+<div class="postCard" *ngFor="let post of posts">
+    <h2>{{post.heading}}</h2>
+    <p><small>By {{post.author}}</small></p>
+    <p>{{post.content}}...</p>
+    <button>Read More</button>
 </div>
