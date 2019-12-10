@@ -8,6 +8,7 @@ import { AllPostsComponent } from './pages/all-posts/all-posts.component';
 import { CreatePostComponent } from './pages/create-post/create-post.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     ViewPostComponent,
     AllPostsComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
