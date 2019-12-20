@@ -6,23 +6,23 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiService {
-  readonly API_URL = 'http://localhost:3000';
+  private readonly API_URL = 'http://localhost:3000';
 
-  constructor(public http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  get(url: string): Promise<any> {
+  private get(url: string): Promise<any> {
     return this.http.get(this.API_URL + url).toPromise();
   }
 
-  post(url: string, data: any): Promise<any> {
+  private post(url: string, data: any): Promise<any> {
     return this.http.post(this.API_URL + url, data).toPromise();
   }
 
-  getAllPosts(): Promise<any> {
+  public getAllPosts(): Promise<any> {
     return this.get('/allPosts');
   }
 
-  uploadPost(post: any) {
-    this.post('/posts', post);
+  public uploadPost(post: any): Promise<any> {
+    return this.post('/posts', post);
   }
 }
