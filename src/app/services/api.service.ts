@@ -14,7 +14,15 @@ export class ApiService {
     return this.http.get(this.API_URL + url).toPromise();
   }
 
+  post(url: string, data: any): Promise<any> {
+    return this.http.post(this.API_URL + url, data).toPromise();
+  }
+
   getAllPosts(): Promise<any> {
     return this.get('/allPosts');
+  }
+
+  uploadPost(post: any) {
+    this.post('/posts', post);
   }
 }
