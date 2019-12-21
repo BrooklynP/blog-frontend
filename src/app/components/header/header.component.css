@@ -1,10 +1,67 @@
+.stickyContainer{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 header{
     background-color: white;
     box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.10);
     padding: 10px;
     text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+.sideMenu{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    /* border-right: solid 1px black; */
+    box-shadow: 6px 0px 5px 0px rgba(0,0,0,0.3);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sideMenu a{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sideMenu a:hover{
+    color: black;
+}
+
+.sideMenu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+i{
+   font-size: 24pt;
+   color: #3E6CC9;
+}
+
+button {
+    border: none;
+    background: none;
+
+    cursor: pointer;
+}
 
 h1{
     font-weight: 100;

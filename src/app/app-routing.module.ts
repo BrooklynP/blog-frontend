@@ -12,10 +12,6 @@ const routes: Routes = [
     component: AllPostsComponent
   },
   {
-    path: ':id',
-    component: ViewPostComponent
-  },
-  {
     path: 'post/:id',
     component: ViewPostComponent,
   },
@@ -26,6 +22,10 @@ const routes: Routes = [
   {
     path: 'create',
     component: CreatePostComponent
+  },
+  {
+    path: ':id',
+    component: ViewPostComponent
   },
   {
     path: '**',

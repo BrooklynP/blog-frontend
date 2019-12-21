@@ -12,4 +12,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  public closeSideMenu() {
+    document.getElementById('sideMenu').style.width = '0px';
+
+  }
+
+  public openSideMenu() {
+    document.getElementById('sideMenu').style.width = '250px';
+  }
 }

@@ -1,3 +1,16 @@
-<header>
+<div class="stickyContainer">
+    <div class="sideMenu" id="sideMenu">
+        <a class="closebtn" href="javascript:void(0)" (click)="closeSideMenu()">&times;</a>
+        <a href="/allPosts">View All Posts</a>
+        <a href="/create">Create A post</a>
+    </div>
+
+    <header>
+
+        <button (click)="openSideMenu()">
+            <i class="fas fa-hamburger"></i>
+        </button>
         <h1>Brooklyns Cool Travel Blog</h1>
+        <i></i>
     </header>
+</div>
