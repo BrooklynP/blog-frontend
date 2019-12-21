@@ -1,6 +1,6 @@
-<div class="card" *ngFor="let post of posts">
+<div class="card" *ngFor="let post of posts; let i = index">
     <h2>{{post.heading}}</h2>
     <p><small>By {{post.author}}</small></p>
     <p>{{post.summary}}...</p>
-    <button>Read More</button>
+    <button (click)="goToPost(i)">Read More</button><br>
 </div>

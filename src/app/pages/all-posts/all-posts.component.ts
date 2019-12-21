@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-posts',
@@ -8,15 +9,17 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class AllPostsComponent implements OnInit {
 
-  constructor(public api: ApiService) { }
+  constructor(public api: ApiService, private router: Router) { }
 
   posts;
 
   ngOnInit() {
     this.api.getAllPosts().then((res) => {
       this.posts = res;
-      console.log(res);
     });
   }
 
+  public goToPost(uid: number ) {
+    this.router.navigate(['/' + uid]);
+  }
 }

@@ -12,16 +12,20 @@ const routes: Routes = [
     component: AllPostsComponent
   },
   {
+    path: ':id',
+    component: ViewPostComponent
+  },
+  {
+    path: 'post/:id',
+    component: ViewPostComponent,
+  },
+  {
     path: 'allPosts',
     component: AllPostsComponent
   },
   {
     path: 'create',
     component: CreatePostComponent
-  },
-  {
-    path: 'post',
-    component: ViewPostComponent
   },
   {
     path: '**',

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-view-post',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewPostComponent implements OnInit {
 
-  constructor() { }
+  public postToView = {
+    heading: '',
+    author: '',
+    content: ''
+  };
+
+  constructor(private route: ActivatedRoute, private api: ApiService) {
+
+  }
 
   ngOnInit() {
+    let posts;
+    this.api.getAllPosts().then((res) => {
+      posts = res;
+    }).then(() => {
+
+      this.route.params.forEach(params => {
+        this.postToView = posts[params.id];
+      });
+    });
   }
 
 }
