@@ -26,6 +26,7 @@ h1 {
     border: solid 1px black;
     background-color: #3E6CC9;
     color: white;
+    cursor: pointer;
 }
 
 .card textarea{
