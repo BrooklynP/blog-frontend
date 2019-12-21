@@ -8,6 +8,10 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class CreatePostComponent implements OnInit {
 
+  public headingInput: string;
+  public summaryInput: string;
+  public contentInput: string;
+
   constructor(public api: ApiService) { }
 
   ngOnInit() {
@@ -16,10 +20,10 @@ export class CreatePostComponent implements OnInit {
   createBlogPost() {
     console.log('Submit Attempted');
     this.api.uploadPost({
-      heading: 'Test Post',
+      heading: this.headingInput ? this.headingInput : 'No Heading Supplied',
       author: 'brooklyn',
-      summary: 'This is a test post to the node JS server',
-      content: 'This is a test post to the node JS server to see if it posts correctly'
+      summary: this.summaryInput ? this.summaryInput : 'No Summary Supplied',
+      content: this.contentInput ? this.contentInput : 'No Content Supplied'
     });
   }
 

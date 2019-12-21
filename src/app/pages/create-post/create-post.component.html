@@ -1,10 +1,10 @@
 
 <div class="card">
     <label>Title</label><br>
-    <input><br>
+    <input [(ngModel)]="headingInput"><br>
     <label>Summary</label><br>
-    <input><br>
+    <input [(ngModel)]="summaryInput"><br>
     <label>Body</label><br>
-    <textarea></textarea><br>
+    <textarea [(ngModel)]="contentInput"></textarea><br>
     <button (click)="createBlogPost()">Create Post</button><br>
 </div>
