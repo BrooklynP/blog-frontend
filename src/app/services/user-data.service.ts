@@ -6,9 +6,14 @@ import { Injectable } from '@angular/core';
 export class UserDataService {
   private userData = {
     isAdmin: true,
+    userName: 'Brooklyn'
   };
 
   constructor() {
+  }
+
+  public getUserName() {
+    return this.userData.userName;
   }
 
   public getUserAdminStatus() {

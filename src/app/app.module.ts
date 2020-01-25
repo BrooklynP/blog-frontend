@@ -11,6 +11,7 @@ import { CreatePostComponent } from './pages/create-post/create-post.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { HeaderComponent } from './components/header/header.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
