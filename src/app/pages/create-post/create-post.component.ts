@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-post',
@@ -12,19 +13,19 @@ export class CreatePostComponent implements OnInit {
   public summaryInput: string;
   public contentInput: string;
 
-  constructor(public api: ApiService) { }
+  constructor(public api: ApiService, private router: Router) { }
 
   ngOnInit() {
   }
 
   createBlogPost() {
-    console.log('Submit Attempted');
     this.api.uploadPost({
       heading: this.headingInput ? this.headingInput : 'No Heading Supplied',
       author: 'brooklyn',
       summary: this.summaryInput ? this.summaryInput : 'No Summary Supplied',
       content: this.contentInput ? this.contentInput : 'No Content Supplied'
     });
+    this.router.navigateByUrl('');
   }
 
 }

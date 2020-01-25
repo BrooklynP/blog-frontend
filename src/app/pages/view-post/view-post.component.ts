@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-view-post',
@@ -15,7 +16,13 @@ export class ViewPostComponent implements OnInit {
     content: ''
   };
 
-  constructor(private route: ActivatedRoute, private api: ApiService) {
+  private postID: number;
+
+  constructor(
+    private route: ActivatedRoute,
+    private api: ApiService,
+    public userData: UserDataService
+    ) {
 
   }
 
@@ -26,9 +33,14 @@ export class ViewPostComponent implements OnInit {
     }).then(() => {
 
       this.route.params.forEach(params => {
+        this.postID = params.id;
         this.postToView = posts[params.id];
       });
     });
+  }
+
+  public deletePost() {
+    this.api.deletePost(this.postID);
   }
 
 }

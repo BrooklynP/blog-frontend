@@ -5,3 +5,10 @@
 h1{
     font-weight: bold;
 }
+
+button.danger{
+    color: red;
+    background: none;
+    border: none;
+    font-size: 16pt;
+}

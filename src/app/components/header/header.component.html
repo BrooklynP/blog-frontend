@@ -2,7 +2,7 @@
     <div class="sideMenu" id="sideMenu">
         <a class="closebtn" href="javascript:void(0)" (click)="closeSideMenu()">&times;</a>
         <a href="/allPosts">View All Posts</a>
-        <a href="/create">Create A post</a>
+        <a href="/create" *ngIf="userData.getUserAdminStatus()">Create A post</a>
     </div>
 
     <header>
