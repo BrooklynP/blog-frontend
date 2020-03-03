@@ -1,0 +1,15 @@
+<p>login works!</p>
+<div class="card">
+    <h1>Welcome To Brooklyns Cool Travel Blog</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <label>Username</label>
+        <input formControlName="username">
+        <br>
+        <label>Password</label>
+        <input formControlName="password">
+        <br>
+        <div>
+            <button [disabled]="!loginForm.valid">Sign in</button>
+        </div>
+    </form>
+</div>

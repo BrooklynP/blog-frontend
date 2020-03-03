@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { UserDataService } from 'src/app/services/user-data.service';
 
@@ -21,7 +21,8 @@ export class ViewPostComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private api: ApiService,
-    public userData: UserDataService
+    public userData: UserDataService,
+    private router: Router
     ) {
 
   }
@@ -41,6 +42,7 @@ export class ViewPostComponent implements OnInit {
 
   public deletePost() {
     this.api.deletePost(this.postID);
+    this.router.navigateByUrl('');
   }
 
 }
