@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl  } from '@angular/forms';
+import Amplify, { Auth } from 'aws-amplify';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,13 @@ export class LoginComponent implements OnInit {
     password: new FormControl('')
   });
 
-  constructor() { }
+  constructor() {
+    Amplify.configure({
+      Auth: {
+        region: 'eu-west-1',
+      }
+    });
+   }
 
   ngOnInit() {
   }
